@@ -1,0 +1,7 @@
+[package]
+name = "rustLang"
+version = "0.1.0"
+authors = ["selvan"]
+edition = "2018"
+
+[dependencies]

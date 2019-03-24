@@ -1,0 +1,42 @@
+// Vectors - resizable arrays
+
+use std::mem;
+
+pub fn run() {
+  let mut numbers: Vec<i32> = vec![0, 1, 2, 3, 4];
+
+
+  // Re-assign value
+  numbers[2] = 20;
+
+// Add on to vector
+  numbers.push(5);
+  numbers.push(6);
+
+// Pop off last value
+  numbers.pop();
+
+  println!("numbers: {:?}", numbers);
+  
+//   get single val
+  println!("Single Value: {}", numbers[0]);
+
+//   Get Vector length
+    println!("Vector Length: {}", numbers.len());
+
+// Vector are stack allocated
+    println!("Vector occupes {} bytes", mem::size_of_val(&numbers));
+    // get slice
+    let slice: & [i32] = &numbers[0..3];
+    println!("Slice: {:?}", slice);
+    // Loop through vector values
+    for x in numbers.iter() {
+        println!("Number: {}", x);
+    }
+
+    // Loop & mutate values
+    for x in numbers.iter_mut() {
+        *x *= 2;
+    }
+    println!("Number Vec: {:?}", numbers);
+}
